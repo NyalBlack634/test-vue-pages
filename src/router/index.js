@@ -1,21 +1,49 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+// 遅延ロード
+const MyHome = () =>
+  import(/* webpackChunkName: "MyHome" */ "@/views/MyHome.vue");
+const MyUsers = () =>
+  import(/* webpackChunkName: "MyUsers" */ "@/views/MyUsers.vue");
+const HelloWorld = () =>
+  import(/* webpackChunkName: "HelloWorld" */ "@/components/HelloWorld.vue");
+const UsersPost = () =>
+  import(/* webpackChunkName: "UsersPost" */ "@/views/UsersPost.vue");
+const UserProfile = () =>
+  import(/* webpackChunkName: "UserProfile" */ "@/views/UserProfile.vue");
+const HeaderHome = () =>
+  import(/* webpackChunkName: "HeaderHome.vue" */ "@/views/HeaderHome.vue");
+const HeaderUsers = () =>
+  import(/* webpackChunkName: "HeaderUsers" */ "@/views/HeaderUsers.vue");
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "Home",
+    components: {
+      default: MyHome,
+      header: HeaderHome,
+    },
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/user:id",
+    // path: "/user/:id",
+    // name: "User",
+    components: {
+      default: MyUsers,
+      header: HeaderUsers,
+    },
+    props: {
+      default: true,
+      header: false,
+    },
+    children: [
+      { path: "post", component: UsersPost, name: "users-post" },
+      { path: "profile", component: UserProfile, name: "users-id-profile" },
+    ],
   },
+  { path: "/HelloWorld", name: "Hello", component: HelloWorld },
+  // { path: "hello", redirect: "/" }
+  // { path: "/posts", component: UsersPost, name: "post" }
 ];
 
 const router = createRouter({

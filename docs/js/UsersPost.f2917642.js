@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkudemy_vuex"]=self["webpackChunkudemy_vuex"]||[]).push([[428],{8393:function(u,n,e){e.r(n),e.d(n,{default:function(){return f}});var r=e(3396);const t=(0,r._)("h2",null,"ユーザーの投稿",-1),c=[t];function l(u,n){return(0,r.wg)(),(0,r.iD)("div",null,c)}var s=e(89);const a={},d=(0,s.Z)(a,[["render",l]]);var f=d}}]);
+//# sourceMappingURL=UsersPost.f2917642.js.map

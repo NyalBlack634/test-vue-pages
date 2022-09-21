@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkudemy_vuex"]=self["webpackChunkudemy_vuex"]||[]).push([[918],{2237:function(e,u,n){n.r(u),n.d(u,{default:function(){return a}});var r=n(3396);function t(e,u){return(0,r.wg)(),(0,r.iD)("h3",null,"UserProfile")}var c=n(89);const f={},s=(0,c.Z)(f,[["render",t]]);var a=s}}]);
+//# sourceMappingURL=UserProfile.7f4634ef.js.map
